@@ -3,6 +3,7 @@ package main
 import (
 	"discheck/constants"
 	"discheck/logger"
+	http "discheck/networking"
 	"discheck/parser"
 	"discheck/version"
 
@@ -23,4 +24,12 @@ func main() {
 	}
 
 	logger.Log(constants.INFO, "Loaded config!")
+
+	token := "example_token"
+
+	if http.CheckAccount(token) {
+		logger.Log(constants.VALID, token)
+	} else {
+		logger.Log(constants.INVALID, token)
+	}
 }

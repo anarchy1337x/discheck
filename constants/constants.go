@@ -3,9 +3,11 @@ package constants
 type LogType string
 
 const (
-	INFO  LogType = "INFO"
-	WARN  LogType = "WARN"
-	ERROR LogType = "ERROR"
+	INFO    LogType = "INFO"
+	WARN    LogType = "WARN"
+	ERROR   LogType = "ERROR"
+	INVALID LogType = "INVALID"
+	VALID   LogType = "VALID"
 )
 
 var (
