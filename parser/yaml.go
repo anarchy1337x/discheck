@@ -23,7 +23,7 @@ func ParseYaml() (structs.Config, error) {
 	return config, nil
 }
 
-func CheckSyntaxValidity(value any) bool {
+func CheckBasicSyntaxValidity(value any) bool {
 	if value != nil && value != "" && value != " " {
 		return true
 	}

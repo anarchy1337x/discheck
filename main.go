@@ -24,7 +24,7 @@ func main() {
 
 	logger.Log(constants.INFO, "Pre-checking YAML syntax...")
 
-	if parser.CheckSyntaxValidity(config) {
+	if parser.CheckBasicSyntaxValidity(config) {
 		logger.Log(constants.SUCCESS, "Syntax check passed!")
 	} else {
 		logger.Log(constants.FAIL, "Syntax check failed!")
