@@ -3,7 +3,7 @@ proxies:
   type: http
   path: proxies.txt
   timeout: 5000
-  rotating: false
+  order: random # (e.g. linear, random)
 
 tokens:
   # Do not change this unless you know what you're doing.

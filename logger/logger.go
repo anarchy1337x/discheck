@@ -18,6 +18,10 @@ func Log(logType constants.LogType, input string) {
 			return "\u001b[31m[INVALID] "
 		case constants.VALID:
 			return "\u001b[32m[VALID] "
+		case constants.SUCCESS:
+			return "\u001b[32m[SUCCESS] "
+		case constants.FAIL:
+			return "\u001b[31m[FAIL] "
 		default:
 			return "\u001b[36m[INFO] \u001b[37m"
 		}

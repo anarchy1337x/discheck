@@ -2,11 +2,11 @@ package structs
 
 type Config struct {
 	Proxies struct {
-		Enabled  bool   `yaml:"enabled"`
-		Type     string `yaml:"type"`
-		Path     string `yaml:"path"`
-		Timeout  int    `yaml:"timeout"`
-		Rotating bool   `yaml:"rotating"`
+		Enabled bool   `yaml:"enabled"`
+		Type    string `yaml:"type"`
+		Path    string `yaml:"path"`
+		Timeout int    `yaml:"timeout"`
+		Order   string `yaml:"order"`
 	} `yaml:"proxies"`
 
 	Tokens struct {

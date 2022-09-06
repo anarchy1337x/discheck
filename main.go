@@ -3,7 +3,6 @@ package main
 import (
 	"discheck/constants"
 	"discheck/logger"
-	http "discheck/networking"
 	"discheck/parser"
 	"discheck/version"
 
@@ -17,19 +16,18 @@ func main() {
 		logger.Log(constants.WARN, "You are using an outdated version of Discheck. Please update to the latest version.")
 	}
 
-	_, err := parser.ParseYaml()
+	config, err := parser.ParseYaml()
 	if err != nil {
 		logger.Log(constants.ERROR, fmt.Sprintf("Failed to parse config file: %s", err))
 		return
 	}
 
-	logger.Log(constants.INFO, "Loaded config!")
+	logger.Log(constants.INFO, "Pre-checking YAML syntax...")
 
-	token := "example_token"
-
-	if http.CheckAccount(token) {
-		logger.Log(constants.VALID, token)
+	if parser.CheckSyntaxValidity(config) {
+		logger.Log(constants.SUCCESS, "Syntax check passed!")
 	} else {
-		logger.Log(constants.INVALID, token)
+		logger.Log(constants.FAIL, "Syntax check failed!")
+		return
 	}
 }

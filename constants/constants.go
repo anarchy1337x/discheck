@@ -8,6 +8,8 @@ const (
 	ERROR   LogType = "ERROR"
 	INVALID LogType = "INVALID"
 	VALID   LogType = "VALID"
+	SUCCESS LogType = "SUCCESS"
+	FAIL    LogType = "FAIL"
 )
 
 var (
