@@ -20,3 +20,11 @@ func OpenConfigFile() ([]byte, error) {
 
 	return data, nil
 }
+
+func Exists(file_name string) bool {
+	if _, err := os.Stat(file_name); os.IsNotExist(err) {
+		return false
+	}
+
+	return true
+}

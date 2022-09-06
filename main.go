@@ -22,9 +22,5 @@ func main() {
 		return
 	}
 
-	for _, item := range array {
-		fmt.Println(item)
-	}
-
 	logger.Log(constants.INFO, "Loaded config!")
 }

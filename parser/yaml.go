@@ -22,7 +22,3 @@ func ParseYaml() (structs.Config, error) {
 
 	return config, nil
 }
-
-func IsValidYAML(config structs.Config) bool {
-	return false
-}
