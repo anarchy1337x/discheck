@@ -16,15 +16,15 @@ func main() {
 		logger.Log(constants.WARN, "You are using an outdated version of Discheck. Please update to the latest version.")
 	}
 
-	config, err := parser.ParseYaml()
+	_, err := parser.ParseYaml()
 	if err != nil {
 		logger.Log(constants.ERROR, fmt.Sprintf("Failed to parse config file: %s", err))
 		return
 	}
 
-	if parser.IsValidYAML(config) {
-		logger.Log(constants.INFO, "Config file is valid.")
-	} else {
-		logger.Log(constants.ERROR, "Config file is invalid.")
+	for _, item := range array {
+		fmt.Println(item)
 	}
+
+	logger.Log(constants.INFO, "Loaded config!")
 }
