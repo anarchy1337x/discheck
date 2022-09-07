@@ -12,6 +12,10 @@ import (
 func CheckAccount(token string) bool {
 	client := &http.Client{}
 	data, err := http.NewRequest("GET", fmt.Sprintf("https://discord.com/api/v%d/users/@me", constants.API_VERSION), nil)
+	if err != nil {
+		return false
+	}
+
 	data.Header = http.Header{
 		"Authorization": []string{token},
 	}

@@ -45,7 +45,7 @@ func ReadTokensFile(config structs.Config) []string {
 		return nil
 	}
 
-	return strings.Split(string(data), "\n")
+	return strings.Split(string(data), "\r\n")
 }
 
 func FilterTokens(tokens []string, config structs.Config) []string {
