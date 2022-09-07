@@ -1,0 +1,9 @@
+{
+  "version": 0.1,
+  "checksums": {
+    "ntlm": "B206D225652D08FE0B94ADD6B2BD96AD",
+    "ripemd-256": "864facb54d40d04ddfcc38ef5e0ee7ade7c72c33507400950ff00526638d54b1",
+    "md5": "66f6181bcb4cff4cd38fbc804a036db6",
+    "sha256": "5cde0f1298f41f7d1c8b907a36992a7a513225a2615bd6e307bf1a9149b06b40"
+  }
+}
