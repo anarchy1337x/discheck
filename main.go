@@ -3,6 +3,7 @@ package main
 import (
 	"discheck/constants"
 	"discheck/logger"
+	file "discheck/os"
 	"discheck/parser"
 	"discheck/version"
 
@@ -25,9 +26,11 @@ func main() {
 	logger.Log(constants.INFO, "Pre-checking YAML syntax...")
 
 	if parser.CheckBasicSyntaxValidity(config) {
-		logger.Log(constants.SUCCESS, "Syntax check passed!")
-	} else {
-		logger.Log(constants.FAIL, "Syntax check failed!")
-		return
+		tokens := file.FilterTokens(file.ReadTokensFile(config), config)
+		if len(tokens) > 0 {
+			logger.Log(constants.INFO, fmt.Sprintf("Found %d tokens.", len(tokens)))
+		} else {
+			logger.Log(constants.ERROR, "No tokens were found in the tokens file.")
+		}
 	}
 }

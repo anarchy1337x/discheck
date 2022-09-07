@@ -7,7 +7,7 @@ proxies:
 
 tokens:
   # Do not change this unless you know what you're doing.
-  regex: ^(mfa.[A-Za-z_0-9]+|[MN][A-Za-z\d]{23}\.[\w-]{6}\.[\w-]{27})$
+  regex: "[A-Za-z0-9]{24}.[A-Za-z0-9]{6}.[A-Za-z0-9]{27}"
   path: tokens.txt
 
 settings:

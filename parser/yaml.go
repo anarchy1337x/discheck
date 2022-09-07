@@ -8,7 +8,7 @@ import (
 )
 
 func ParseYaml() (structs.Config, error) {
-	data, err := file.OpenConfigFile()
+	data, err := file.ReadConfigFile()
 	if err != nil {
 		return structs.Config{}, err
 	}
