@@ -11,7 +11,7 @@ import (
 
 func CheckAccount(token string) bool {
 	client := &http.Client{}
-	data, err := http.NewRequest("GET", fmt.Sprintf("https://discord.com/api/v%d/users/@me", constants.API_VERSION), nil)
+	data, err := http.NewRequest("GET", fmt.Sprintf("https://discord.com/api/v%d/users/library", constants.API_VERSION), nil)
 	if err != nil {
 		return false
 	}
@@ -33,7 +33,7 @@ func CheckAccount(token string) bool {
 		return false
 	}
 
-	if req.StatusCode == 200 {
+	if req.StatusCode == 400 {
 		var discord_response structs.DiscordSuccessResponse
 		err = json.Unmarshal(raw, &discord_response)
 		if err != nil {

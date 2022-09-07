@@ -35,7 +35,7 @@ func main() {
 
 	valid := 0
 	if parser.CheckBasicSyntaxValidity(config) {
-		tokens := duplicates.Remove(file.FilterTokens(file.ReadTokensFile(config), config))
+		tokens := duplicates.Remove(file.ReadTokensFile(config))
 		if len(tokens) > 0 {
 			logger.Log(constants.INFO, fmt.Sprintf("Found %d tokens.", len(tokens)))
 

@@ -22,24 +22,14 @@ type Config struct {
 }
 
 type DiscordSuccessResponse struct {
-	ID                string      `json:"id"`
-	Username          string      `json:"username"`
-	Avatar            string      `json:"avatar"`
-	AvatarDecoration  interface{} `json:"avatar_decoration"`
-	Discriminator     string      `json:"discriminator"`
-	PublicFlags       int         `json:"public_flags"`
-	Flags             int         `json:"flags"`
-	PurchasedFlags    int         `json:"purchased_flags"`
-	PremiumUsageFlags int         `json:"premium_usage_flags"`
-	Banner            interface{} `json:"banner"`
-	BannerColor       string      `json:"banner_color"`
-	AccentColor       int         `json:"accent_color"`
-	Bio               string      `json:"bio"`
-	Locale            string      `json:"locale"`
-	NsfwAllowed       bool        `json:"nsfw_allowed"`
-	MfaEnabled        bool        `json:"mfa_enabled"`
-	PremiumType       int         `json:"premium_type"`
-	Email             string      `json:"email"`
-	Verified          bool        `json:"verified"`
-	Phone             string      `json:"phone"`
+	Code   int `json:"code"`
+	Errors struct {
+		UserID struct {
+			Errors []struct {
+				Code    string `json:"code"`
+				Message string `json:"message"`
+			} `json:"_errors"`
+		} `json:"user_id"`
+	} `json:"errors"`
+	Message string `json:"message"`
 }
