@@ -41,3 +41,23 @@ func CheckAccount(token string) bool {
 	}
 	return false
 }
+
+func GetVersion() string {
+	client := &http.Client{}
+	data, err := http.NewRequest("GET", "https://raw.githubusercontent.com/anarchy1337x/Discheck/master/version.txt", nil)
+
+	req, err := client.Do(data)
+
+	if err != nil {
+		return ""
+	}
+
+	defer req.Body.Close()
+
+	raw, err := io.ReadAll(req.Body)
+	if err != nil {
+		return ""
+	}
+
+	return string(raw)
+}

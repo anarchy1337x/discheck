@@ -13,6 +13,6 @@ const (
 )
 
 var (
-	SOFTWARE_VERSION = 0.01
+	SOFTWARE_VERSION = 0.1
 	API_VERSION      = 9
 )

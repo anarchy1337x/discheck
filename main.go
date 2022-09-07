@@ -31,6 +31,7 @@ func main() {
 			logger.Log(constants.INFO, fmt.Sprintf("Found %d tokens.", len(tokens)))
 		} else {
 			logger.Log(constants.ERROR, "No tokens were found in the tokens file.")
+			return
 		}
 	}
 }

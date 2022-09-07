@@ -2,8 +2,13 @@ package version
 
 import (
 	"discheck/constants"
+	http "discheck/networking"
+	"strconv"
+	"strings"
 )
 
 func IsOutdated() bool {
-	return constants.SOFTWARE_VERSION < 5.01
+	version := http.GetVersion()
+	version_float, _ := strconv.ParseFloat(strings.Trim(version, "\n"), 64)
+	return version_float != constants.SOFTWARE_VERSION
 }
